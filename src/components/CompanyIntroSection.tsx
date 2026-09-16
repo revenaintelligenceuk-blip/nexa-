@@ -50,9 +50,9 @@ export const CompanyIntroSection: React.FC = () => {
           >
             <h2
               id="intro-headline"
-              className="text-[clamp(2.25rem,5vw,4.75rem)] font-extrabold tracking-[-0.04em] leading-[1.02] text-[#0A0A0A] uppercase"
+              className="text-[clamp(1.5rem,2.6vw,2.5rem)] font-semibold tracking-[-0.02em] leading-[1.25] text-[#0A0A0A]"
             >
-              REPRESENTATION AT THE SENIOR LEVEL IS NOT ADVISORY. IT IS EXECUTIVE LEVERAGE.
+              Representation at the senior level is not advisory. It is executive leverage.
             </h2>
           </motion.div>
 

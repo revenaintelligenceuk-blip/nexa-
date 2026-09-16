@@ -43,7 +43,7 @@ export const GlobalReachSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ ...controlledSpring, delay: 0.1 }}
-              className="text-[clamp(2.5rem,6vw,5.5rem)] font-extrabold tracking-[-0.04em] uppercase leading-[0.96] text-[#0A0A0A]"
+              className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-[-0.03em] uppercase leading-[1.05] text-[#0A0A0A]"
             >
               GLOBAL REACH.
             </motion.h2>

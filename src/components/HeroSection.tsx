@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
 import { NexaLogo } from './NexaLogo';
 import { ArrowDown, ChevronRight, ShieldCheck } from 'lucide-react';
+import { Link } from '../router';
 
 interface HeroSectionProps {
   onOpenInquiry: () => void;
@@ -42,19 +43,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenInquiry }) => {
       id="top"
       className="relative min-h-screen w-full bg-[#0A0A0A] text-[#FAFAF8] overflow-hidden"
     >
-      {/* Full-bleed stadium photography — distant parallax layer, subdued to near-black for legibility */}
-      <motion.div style={parallaxBgStyle} className="absolute -inset-y-[10%] inset-x-0 pointer-events-none">
-        <img
+      {/* Full-bleed stadium photography — slow Ken Burns drift gives the still image a cinematic, video-like presence */}
+      <motion.div style={parallaxBgStyle} className="absolute -inset-y-[10%] inset-x-0 pointer-events-none overflow-hidden">
+        <motion.img
           src="https://images.unsplash.com/photo-1546717003-caee5f93a9db?auto=format&fit=crop&w=2400&q=80"
           alt=""
           aria-hidden="true"
           loading="eager"
-          className="w-full h-full object-cover object-center grayscale contrast-125 brightness-[0.32]"
+          className="w-full h-full object-cover object-center grayscale contrast-125 brightness-[0.42]"
+          initial={{ scale: 1, x: 0, y: 0 }}
+          animate={
+            prefersReducedMotion
+              ? undefined
+              : { scale: [1, 1.12, 1.06, 1.12], x: [0, -18, 10, 0], y: [0, 10, -6, 0] }
+          }
+          transition={{ duration: 32, repeat: Infinity, ease: 'easeInOut' }}
         />
       </motion.div>
 
-      {/* Dark wash — keeps oversized type legible over the photo */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/85 to-[#0A0A0A]" />
+      {/* Dark wash — keeps type legible over the photo */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]" />
 
       {/* Faint pitch-marking texture — center circle + halfway line, an understated football cue rather than a literal graphic */}
       <svg
@@ -104,7 +112,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenInquiry }) => {
         <div className="w-full max-w-7xl mx-auto my-auto py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
 
-            {/* Main Headline */}
+            {/* Main Headline — a restrained line, not a page-filling billboard; the photo carries the moment */}
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -113,9 +121,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenInquiry }) => {
             >
               <h1
                 id="hero-statement"
-                className="text-[clamp(2.75rem,7vw,6.5rem)] font-extrabold tracking-[-0.04em] leading-[0.95] text-[#FAFAF8] uppercase"
+                className="text-[clamp(1.5rem,2.6vw,2.5rem)] font-semibold tracking-[-0.02em] leading-[1.2] text-[#FAFAF8] max-w-2xl"
               >
-                WE ARCHITECT THE CAREERS OF ELITE FOOTBALLERS.
+                We architect the careers of elite footballers.
               </h1>
             </motion.div>
 
@@ -146,14 +154,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenInquiry }) => {
                   <ChevronRight className="w-4 h-4 text-[#C9971F] group-hover:translate-x-1 transition-transform" />
                 </motion.button>
 
-                <a
-                  href="#services"
+                <Link
+                  to="/services"
                   id="hero-services-link"
                   className="inline-flex items-center justify-between w-full px-6 py-4 bg-[#121212] hover:bg-[#181818] border border-[#222222] text-[#FAFAF8] text-xs tracking-[0.2em] uppercase transition-colors"
                 >
                   <span>Explore Services</span>
                   <ArrowDown className="w-3.5 h-3.5 text-[#FAFAF8]/50" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>

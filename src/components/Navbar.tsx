@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { NexaLogo } from './NexaLogo';
 import { ArrowUpRight, Menu, X, ShieldCheck } from 'lucide-react';
+import { Link } from '../router';
 
 interface NavbarProps {
   onOpenInquiry: () => void;
@@ -34,11 +35,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { label: 'Overview', href: '#overview' },
-    { label: 'Services', href: '#services' },
-    { label: 'Specialist Team', href: '#team' },
-    { label: 'Track Record', href: '#track-record' },
-    { label: 'Global Reach', href: '#global-reach' },
+    { label: 'Overview', href: '/' },
+    { label: 'Services', href: '/services' },
+    { label: 'Specialist Team', href: '/team' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -57,8 +57,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
         {/* Brand Logo */}
-        <a
-          href="#top"
+        <Link
+          to="/"
           id="nav-brand-link"
           className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9971F] group flex items-center"
           aria-label="Nexa Sports Management Home"
@@ -70,19 +70,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
           >
             <NexaLogo size="sm" variant="dark" showSubtitle={true} />
           </motion.div>
-        </a>
+        </Link>
 
         {/* Desktop Nav Links */}
         <nav className="hidden md:flex items-center space-x-8 lg:space-x-10" aria-label="Main Navigation">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               id={`nav-link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
               className="text-xs uppercase tracking-[0.2em] text-[#FAFAF8]/70 hover:text-[#FAFAF8] transition-colors duration-200 focus:outline-none focus-visible:text-[#C9971F]"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -128,14 +128,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
           >
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-sm uppercase tracking-[0.2em] text-[#FAFAF8]/80 hover:text-[#C9971F] py-2 border-b border-[#1A1A1A]"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="pt-2">
                 <button

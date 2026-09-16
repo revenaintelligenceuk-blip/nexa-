@@ -89,9 +89,9 @@ export const PlayerCTASection: React.FC<PlayerCTASectionProps> = ({ onOpenInquir
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ ...controlledSpring, delay: 0.1 }}
-              className="text-[clamp(2.5rem,5.5vw,5rem)] font-extrabold tracking-[-0.04em] uppercase leading-[0.98] text-[#FAFAF8]"
+              className="text-[clamp(1.5rem,2.6vw,2.5rem)] font-semibold tracking-[-0.02em] leading-[1.25] text-[#FAFAF8]"
             >
-              YOUR NEXT CONTRACT DEFINES YOUR LEGACY.
+              Your next contract defines your legacy.
             </motion.h2>
 
             <motion.p
