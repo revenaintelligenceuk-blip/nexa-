@@ -7,19 +7,18 @@ interface NexaLogoProps {
   showSubtitle?: boolean;
 }
 
-// Displayed width per size preset — height is derived below from the actual
-// asset's aspect ratio so nothing gets stretched or distorted.
-const WIDTHS: Record<NonNullable<NexaLogoProps['size']>, number> = {
-  sm: 140,
-  md: 190,
-  lg: 260,
-  xl: 340,
-  hero: 440,
+// variant="dark" = for placement on DARK backgrounds -> cream wordmark asset
+// variant="light" = for placement on LIGHT backgrounds -> black wordmark asset
+const LOGO_SRC = {
+  full: {
+    dark: '/brand/nexa-logo-full-cream.png',
+    light: '/brand/nexa-logo-full-black.png',
+  },
+  mark: {
+    dark: '/brand/nexa-mark-cream.png',
+    light: '/brand/nexa-mark-black.png',
+  },
 };
-
-// Natural pixel dimensions of the source logo files in /public/brand.
-const FULL_LOCKUP_ASPECT = 1203 / 477; // wordmark + "SPORTS MANAGEMENT" subtitle
-const MARK_ONLY_ASPECT = 1173 / 411; // wordmark + arrow, no subtitle line
 
 export const NexaLogo: React.FC<NexaLogoProps> = ({
   className = '',
@@ -27,27 +26,25 @@ export const NexaLogo: React.FC<NexaLogoProps> = ({
   size = 'md',
   showSubtitle = true,
 }) => {
-  const width = WIDTHS[size] ?? WIDTHS.md;
-  const aspect = showSubtitle ? FULL_LOCKUP_ASPECT : MARK_ONLY_ASPECT;
-  const height = Math.round(width / aspect);
+  const sizeStyles = {
+    sm: { width: 140 },
+    md: { width: 190 },
+    lg: { width: 260 },
+    xl: { width: 340 },
+    hero: { width: 440 },
+  };
 
-  // variant="dark" = for placement on this site's near-black surfaces (cream
-  // wordmark). variant="light" = for a light/white surface (black wordmark),
-  // kept for any future light-background use (print, partner decks, etc).
-  const color = variant === 'dark' ? 'cream' : 'black';
-  const asset = showSubtitle ? 'logo-full' : 'mark';
-  const src = `/brand/nexa-${asset}-${color}.png`;
+  const { width } = sizeStyles[size] || sizeStyles.md;
+  const src = showSubtitle ? LOGO_SRC.full[variant] : LOGO_SRC.mark[variant];
 
   return (
-    <div id="nexa-brand-logo" className={`inline-block select-none ${className}`}>
+    <div className={`inline-flex flex-col items-center select-none ${className}`} id="nexa-brand-logo">
       <img
         src={src}
         alt="Nexa Sports Management"
         width={width}
-        height={height}
-        draggable={false}
-        style={{ width, height }}
-        className="w-auto h-auto max-w-full"
+        style={{ width, height: 'auto' }}
+        className="max-w-full transition-opacity duration-300"
       />
     </div>
   );
