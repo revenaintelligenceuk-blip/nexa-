@@ -49,6 +49,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenInquiry }) => {
           alt=""
           aria-hidden="true"
           loading="eager"
+          fetchPriority="high"
           className="w-full h-full object-cover object-center grayscale contrast-125 brightness-[0.32]"
         />
       </motion.div>

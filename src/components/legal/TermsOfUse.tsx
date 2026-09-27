@@ -4,7 +4,11 @@ import { Link } from '../../router';
 
 export const TermsOfUse: React.FC = () => {
   return (
-    <LegalLayout title="Terms of Use" lastUpdated="14 September 2026">
+    <LegalLayout
+      title="Terms of Use"
+      description="The terms governing your use of the Nexa Sports Management website, including our regulatory status and acceptable use."
+      lastUpdated="14 September 2026"
+    >
       <section>
         <h2>Acceptance of these terms</h2>
         <p>

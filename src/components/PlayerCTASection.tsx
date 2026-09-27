@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { NexaLogo } from './NexaLogo';
 import { ShieldCheck, ArrowRight, Lock, Check, Send } from 'lucide-react';
+import { LegalPlaceholder } from './legal/LegalPlaceholder';
 
 interface PlayerCTASectionProps {
   onOpenInquiry: () => void;
@@ -118,7 +119,7 @@ export const PlayerCTASection: React.FC<PlayerCTASectionProps> = ({ onOpenInquir
                     Direct Partner Line (Signal / WhatsApp)
                   </span>
                   <span className="text-sm font-mono text-[#FAFAF8] block">
-                    +44 (0) 20 7946 0882
+                    <LegalPlaceholder>PHONE NUMBER — TBC</LegalPlaceholder>
                   </span>
                   <span className="text-[11px] text-[#FAFAF8]/65 mt-1 block">
                     Monitored 24/7 by Senior Partners
@@ -130,7 +131,7 @@ export const PlayerCTASection: React.FC<PlayerCTASectionProps> = ({ onOpenInquir
                     Private Representation Desk
                   </span>
                   <span className="text-sm font-mono text-[#FAFAF8] block">
-                    liaison@nexasports.com
+                    liaison@nexasportsmanagement.com
                   </span>
                   <span className="text-[11px] text-[#FAFAF8]/65 mt-1 block">
                     Sent over an encrypted (HTTPS) connection

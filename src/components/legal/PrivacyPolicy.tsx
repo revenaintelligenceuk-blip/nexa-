@@ -5,7 +5,11 @@ import { Link } from '../../router';
 
 export const PrivacyPolicy: React.FC = () => {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="14 September 2026">
+    <LegalLayout
+      title="Privacy Policy"
+      description="How Nexa Sports Management collects, uses, and protects personal data submitted through our Player Liaison inquiry form."
+      lastUpdated="14 September 2026"
+    >
       <section>
         <h2>Who we are</h2>
         <p>

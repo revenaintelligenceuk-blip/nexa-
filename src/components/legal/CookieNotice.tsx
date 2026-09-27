@@ -4,7 +4,11 @@ import { Link } from '../../router';
 
 export const CookieNotice: React.FC = () => {
   return (
-    <LegalLayout title="Cookie Notice" lastUpdated="14 September 2026">
+    <LegalLayout
+      title="Cookie Notice"
+      description="Nexa Sports Management does not use analytics, advertising, or tracking cookies. See what's stored on your device and why."
+      lastUpdated="14 September 2026"
+    >
       <section>
         <h2>What we use today</h2>
         <p>

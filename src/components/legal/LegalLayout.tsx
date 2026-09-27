@@ -1,15 +1,20 @@
 import React from 'react';
 import { NexaLogo } from '../NexaLogo';
-import { Link } from '../../router';
+import { Link, useRouter } from '../../router';
 import { ArrowLeft } from 'lucide-react';
+import { useDocumentHead } from '../../hooks/useDocumentHead';
 
 interface LegalLayoutProps {
   title: string;
+  description: string;
   lastUpdated: string;
   children: React.ReactNode;
 }
 
-export const LegalLayout: React.FC<LegalLayoutProps> = ({ title, lastUpdated, children }) => {
+export const LegalLayout: React.FC<LegalLayoutProps> = ({ title, description, lastUpdated, children }) => {
+  const { path } = useRouter();
+  useDocumentHead({ title, description, path });
+
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-[#FAFAF8]">
       <header className="max-w-3xl mx-auto px-6 sm:px-8 pt-10 sm:pt-14 pb-6">

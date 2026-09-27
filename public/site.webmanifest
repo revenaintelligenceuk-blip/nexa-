@@ -1,0 +1,16 @@
+{
+  "name": "Nexa Sports Management",
+  "short_name": "Nexa",
+  "description": "Elite football agent representation — contract negotiation, brand partnerships, and career strategy for senior professional players.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

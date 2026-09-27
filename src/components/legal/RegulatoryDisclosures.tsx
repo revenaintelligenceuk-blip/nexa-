@@ -4,7 +4,11 @@ import { LegalPlaceholder } from './LegalPlaceholder';
 
 export const RegulatoryDisclosures: React.FC = () => {
   return (
-    <LegalLayout title="Regulatory Disclosures" lastUpdated="14 September 2026">
+    <LegalLayout
+      title="Regulatory Disclosures"
+      description="Nexa Sports Management's football-agent registrations and certifications, including FIFA FFAR, The FA, RFEF, and FIGC."
+      lastUpdated="14 September 2026"
+    >
       <section>
         <h2>Our registrations</h2>
         <p>

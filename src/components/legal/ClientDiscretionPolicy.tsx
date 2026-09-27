@@ -4,7 +4,11 @@ import { Link } from '../../router';
 
 export const ClientDiscretionPolicy: React.FC = () => {
   return (
-    <LegalLayout title="Client Discretion Policy" lastUpdated="14 September 2026">
+    <LegalLayout
+      title="Client Discretion Policy"
+      description="How Nexa Sports Management handles confidentiality and discretion for signed clients under an active representation mandate."
+      lastUpdated="14 September 2026"
+    >
       <section>
         <h2>Scope</h2>
         <p>

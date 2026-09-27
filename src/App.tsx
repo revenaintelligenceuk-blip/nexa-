@@ -17,6 +17,11 @@ import { RegulatoryDisclosures } from './components/legal/RegulatoryDisclosures'
 import { ClientDiscretionPolicy } from './components/legal/ClientDiscretionPolicy';
 import { CookieNotice } from './components/legal/CookieNotice';
 import { useRouter } from './router';
+import { useDocumentHead } from './hooks/useDocumentHead';
+
+const HOME_TITLE = 'Nexa Sports Management';
+const HOME_DESCRIPTION =
+  'Elite football management representing established professional players in contract negotiation, global commercial partnerships, and career strategy.';
 
 const LEGAL_ROUTES: Record<string, React.FC> = {
   '/privacy': PrivacyPolicy,
@@ -29,6 +34,17 @@ const LEGAL_ROUTES: Record<string, React.FC> = {
 export default function App() {
   const { path } = useRouter();
   const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
+
+  // Any path that isn't a recognized legal route renders the homepage below
+  // (a deliberate soft-catch-all for typos/deep links) — canonicalize all of
+  // those to "/" so search engines never see a wrong-path duplicate of it.
+  const isLegalPage = path in LEGAL_ROUTES;
+  useDocumentHead({
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    path: '/',
+    enabled: !isLegalPage,
+  });
 
   const handleOpenInquiry = () => {
     setIsInquiryModalOpen(true);
@@ -56,8 +72,15 @@ export default function App() {
       {/* Fixed Translucent Navigation */}
       <Navbar onOpenInquiry={handleOpenInquiry} />
 
+      <a
+        href="#main-content"
+        className="fixed top-2 left-2 z-[200] -translate-y-24 focus:translate-y-0 transition-transform bg-[#FAFAF8] text-black text-xs font-semibold uppercase tracking-[0.2em] px-4 py-3"
+      >
+        Skip to content
+      </a>
+
       {/* 1. Opening Statement — Full Viewport, Oversized Headline */}
-      <main>
+      <main id="main-content">
         <HeroSection onOpenInquiry={handleOpenInquiry} />
 
         {/* 2. Company Introduction — 2-4 Sentences, Confident, Minimal Imagery */}
