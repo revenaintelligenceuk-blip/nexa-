@@ -51,7 +51,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenInquiry }) => {
           aria-hidden="true"
           loading="eager"
           fetchPriority="high"
-          className="w-full h-full object-cover object-center grayscale contrast-125 brightness-[0.42]"
+          className="w-full h-full object-cover object-center grayscale contrast-125 brightness-[0.68]"
           initial={{ scale: 1, x: 0, y: 0 }}
           animate={
             prefersReducedMotion
@@ -62,8 +62,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenInquiry }) => {
         />
       </motion.div>
 
-      {/* Dark wash — keeps type legible over the photo */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]" />
+      {/* Dark wash — keeps type legible over the photo without fully crushing it */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/45 to-[#0A0A0A]" />
 
       {/* Faint pitch-marking texture — center circle + halfway line, an understated football cue rather than a literal graphic */}
       <svg

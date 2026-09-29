@@ -15,7 +15,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenInquiry }) => 
   });
 
   return (
-    <main id="main-content" className="pt-20 sm:pt-24">
+    <main id="main-content">
       <ServicesSection onOpenInquiry={onOpenInquiry} />
     </main>
   );

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { SERVICES } from '../data';
 import { ServiceItem } from '../types';
-import { ArrowUpRight, Check, Plus, Minus } from 'lucide-react';
+import { ArrowUpRight, Plus, Minus } from 'lucide-react';
 
 interface ServicesSectionProps {
   onOpenInquiry: () => void;
@@ -57,7 +57,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenInquiry 
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ ...controlledSpring, delay: 0.15 }}
-            className="text-sm sm:text-base text-[#FAFAF8]/60 max-w-md mt-6 md:mt-0 font-light"
+            className="text-sm sm:text-base text-[#FAFAF8]/75 max-w-md mt-6 md:mt-0 font-light"
           >
             Delivered with absolute operational clarity. We manage every variable that dictates a professional player's earnings, legacy, and long-term security.
           </motion.p>
@@ -108,7 +108,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenInquiry 
 
                   {/* Right: Scope badge + Toggle indicator */}
                   <div className="flex items-center justify-between md:justify-end space-x-6">
-                    <span className="text-xs tracking-[0.2em] uppercase text-[#FAFAF8]/65 group-hover:text-[#FAFAF8]/70 transition-colors">
+                    <span className="text-xs tracking-[0.2em] uppercase text-[#FAFAF8]/75 group-hover:text-[#FAFAF8] transition-colors">
                       {service.scope}
                     </span>
                     <div className="w-10 h-10 rounded-full border border-[#222222] group-hover:border-[#C9971F] flex items-center justify-center transition-colors">
@@ -132,9 +132,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenInquiry 
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="pt-8 sm:pt-12 pl-0 sm:pl-16 lg:pl-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+                      <div className="pt-8 sm:pt-12 pl-0 sm:pl-16 lg:pl-20 grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-16">
                         {/* Narrative description */}
-                        <div className="lg:col-span-6 space-y-6">
+                        <div className="lg:col-span-5 space-y-6 pb-8 lg:pb-0">
                           <p className="text-base sm:text-lg text-[#FAFAF8]/85 leading-relaxed font-light">
                             {service.description}
                           </p>
@@ -150,17 +150,22 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenInquiry 
                           </div>
                         </div>
 
-                        {/* Deliverables / Scope Pillars */}
-                        <div className="lg:col-span-6 bg-[#121212] border border-[#1E1E1E] p-6 sm:p-8">
-                          <div className="text-xs uppercase tracking-[0.25em] font-semibold text-[#FAFAF8]/65 mb-6">
+                        {/* Deliverables — a light break from the section's black, matching the
+                            Company Intro flip. Also swaps the generic icon-bullet card for a
+                            plain divided list: typography carries it, same as the row above. */}
+                        <div className="lg:col-span-7 bg-[#FAFAF8] text-[#0A0A0A] p-6 sm:p-10">
+                          <div className="text-xs uppercase tracking-[0.25em] font-semibold text-[#0A0A0A]/50 mb-6">
                             Key Advisory Deliverables
                           </div>
-                          <ul className="space-y-4">
+                          <ul className="border-t border-[#0A0A0A]/10">
                             {service.deliverables.map((item, idx) => (
-                              <li key={idx} className="flex items-start space-x-3 text-sm text-[#FAFAF8]/80 font-normal">
-                                <div className="mt-1 w-3.5 h-3.5 rounded-full bg-[#C9971F]/20 border border-[#C9971F] flex items-center justify-center shrink-0">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-[#C9971F]" />
-                                </div>
+                              <li
+                                key={idx}
+                                className="flex items-baseline gap-4 sm:gap-6 py-4 border-b border-[#0A0A0A]/10 text-sm sm:text-base text-[#0A0A0A]/85 font-normal"
+                              >
+                                <span className="font-mono text-[11px] text-[#C9971F] shrink-0">
+                                  {String(idx + 1).padStart(2, '0')}
+                                </span>
                                 <span>{item}</span>
                               </li>
                             ))}

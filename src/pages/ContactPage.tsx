@@ -15,7 +15,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenInquiry }) => {
   });
 
   return (
-    <main id="main-content" className="pt-20 sm:pt-24">
+    <main id="main-content">
       <PlayerCTASection onOpenInquiry={onOpenInquiry} />
     </main>
   );

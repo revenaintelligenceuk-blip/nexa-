@@ -11,7 +11,7 @@ export const TeamPage: React.FC = () => {
   });
 
   return (
-    <main id="main-content" className="pt-20 sm:pt-24">
+    <main id="main-content">
       <TeamSection />
     </main>
   );
