@@ -42,7 +42,7 @@ export const TermsOfUse: React.FC = () => {
         <h2>Intellectual property</h2>
         <p>
           The Nexa Sports Management name, logo, and all site content are owned by Nexa Sports
-          Management Ltd or our licensors. You may not reproduce, distribute, or create derivative
+          Management or our licensors. You may not reproduce, distribute, or create derivative
           works from any part of this site without our prior written consent.
         </p>
       </section>
@@ -71,7 +71,7 @@ export const TermsOfUse: React.FC = () => {
         <p>
           This site is provided "as is" without warranties of any kind, express or implied, including
           as to accuracy or availability. To the fullest extent permitted by law, Nexa Sports
-          Management Ltd is not liable for any indirect, incidental, or consequential loss arising from
+          Management is not liable for any indirect, incidental, or consequential loss arising from
           your use of this site.
         </p>
       </section>

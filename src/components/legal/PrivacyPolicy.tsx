@@ -13,10 +13,12 @@ export const PrivacyPolicy: React.FC = () => {
       <section>
         <h2>Who we are</h2>
         <p>
-          This site is operated by <strong>Nexa Sports Management Ltd</strong>, registered in England
-          and Wales under company number <LegalPlaceholder>COMPANY NUMBER — TBC</LegalPlaceholder>,
-          registered office at <LegalPlaceholder>REGISTERED OFFICE ADDRESS — TBC</LegalPlaceholder>. We
-          are the data controller for the personal data described below.
+          This site is operated by <strong>Nexa Sports Management</strong>. We are the data controller
+          for the personal data described below.{' '}
+          <LegalPlaceholder>
+            Company registration details will be added here once Nexa Sports Management completes
+            incorporation.
+          </LegalPlaceholder>
         </p>
       </section>
 

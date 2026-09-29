@@ -2,7 +2,6 @@ import React from 'react';
 import { NexaLogo } from './NexaLogo';
 import { ShieldCheck, ArrowUp } from 'lucide-react';
 import { Link } from '../router';
-import { LegalPlaceholder } from './legal/LegalPlaceholder';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -70,7 +69,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center space-x-2 text-center sm:text-left">
               <ShieldCheck className="w-3.5 h-3.5 text-[#C9971F] flex-shrink-0" />
               <span>
-                © {new Date().getFullYear()} Nexa Sports Management Ltd. All rights reserved. Confidential representation.
+                © {new Date().getFullYear()} Nexa Sports Management. All rights reserved. Confidential representation.
               </span>
             </div>
 
@@ -89,11 +88,14 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <p className="text-center sm:text-left text-[10px] leading-relaxed">
-            Nexa Sports Management Ltd is registered in England and Wales under company number{' '}
-            <LegalPlaceholder>COMPANY NUMBER — TBC</LegalPlaceholder>. Registered office:{' '}
-            <LegalPlaceholder>REGISTERED OFFICE ADDRESS — TBC</LegalPlaceholder>.
-          </p>
+          {/*
+            Companies Act 2006 trading-disclosure requirements (company number +
+            registered office on the site) only bite once Nexa is actually
+            incorporated. Not incorporated yet — asserting a registration number
+            here would be a false statement, not just an incomplete one, so this
+            block is intentionally left out until incorporation happens. Re-add
+            it (company number + registered office) at that point.
+          */}
         </div>
       </div>
     </footer>

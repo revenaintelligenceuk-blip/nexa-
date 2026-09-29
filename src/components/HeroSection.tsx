@@ -175,12 +175,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenInquiry }) => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="w-full max-w-7xl mx-auto pt-6 border-t border-[#1A1A1A] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[#FAFAF8]/50"
         >
-          <div className="flex items-center space-x-2">
+          <Link
+            to="/regulatory-disclosures"
+            className="flex items-center space-x-2 hover:text-[#C9971F] transition-colors"
+          >
             <ShieldCheck className="w-4 h-4 text-[#C9971F]" />
             <span className="tracking-[0.15em] uppercase text-[11px] text-[#FAFAF8]/70">
-              FIFA Licensed Football Agency • FFAR Certified Representation
+              FIFA-Registered Football Agency • Registration Details on Request
             </span>
-          </div>
+          </Link>
 
           <a
             href="#company-intro"

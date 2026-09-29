@@ -12,7 +12,7 @@ export const RegulatoryDisclosures: React.FC = () => {
       <section>
         <h2>Our registrations</h2>
         <p>
-          Nexa Sports Management Ltd operates under the following football-agent registrations and
+          Nexa Sports Management operates under the following football-agent registrations and
           certifications. Registration/license numbers are available on request — contact{' '}
           <LegalPlaceholder>PRIVACY CONTACT EMAIL — TBC</LegalPlaceholder> to verify any of the below.
         </p>
